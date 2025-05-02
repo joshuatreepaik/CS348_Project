@@ -22,6 +22,9 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from myapp.views import PatientViewSet, DoctorViewSet, AppointmentViewSet, appointment_report
 
+from django.urls import path, re_path
+from myapp.views import FrontendAppView
+
 router = DefaultRouter()
 router.register(r'patients', PatientViewSet)
 router.register(r'doctors', DoctorViewSet)
@@ -31,4 +34,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api/report/', appointment_report),
+    re_path(r'^.*$', FrontendAppView.as_view()),  # fallback to React
 ]

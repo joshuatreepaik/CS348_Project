@@ -10,6 +10,12 @@ from rest_framework import status
 from rest_framework.decorators import action
 from datetime import date
 
+from django.views.generic import TemplateView
+
+
+
+class FrontendAppView(TemplateView):
+    template_name = "index.html"
 
 class PatientViewSet(viewsets.ModelViewSet):
     queryset = Patient.objects.all()
