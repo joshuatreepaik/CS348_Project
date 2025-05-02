@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
-# build.sh
-
-python manage.py migrate
-python manage.py collectstatic --noinput
-
-#!/usr/bin/env bash
-
-# Exit immediately on error
 set -o errexit
 
 # Step 1: Build React frontend
@@ -24,6 +16,6 @@ cp -r build/* ../backend/frontend/
 # Step 3: Back to backend folder
 cd ../backend
 
-# Step 4: Collect static files for Django
+# Step 4: Collect static files (Django must be installed by now)
 echo "⚙️ Running Django collectstatic..."
 python manage.py collectstatic --noinput
