@@ -44,19 +44,3 @@ The goal was to design something a real clinic could actually use, then make it 
 - How to design REST endpoints that are simple on the frontend but still let the backend do the heavy lifting (e.g., auto-completing past appointments on read, exposing one report endpoint that powers the whole dashboard).
 - How to ship a React + Django app as a single deployable unit — including the build pipeline, static-file handling, and routing fallback so deep links work in production.
 
-## Running it locally
-
-```bash
-# Backend
-cd backend
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-
-# Frontend (in a second terminal)
-cd my-react-app
-npm install
-npm start
-```
-
-The frontend runs at `http://localhost:3000` and talks to the Django API at `http://localhost:8000`.
