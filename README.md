@@ -32,12 +32,6 @@ The goal was to design something a real clinic could actually use, then make it 
 - **Database:** SQLite, with custom indexes and raw SQL for reporting queries
 - **Deployment:** Render (single service serving the API and the built React app), WhiteNoise, Gunicorn
 
-## A quick tour
-
-- **`/`** — Landing page introducing the app.
-- **`/manage`** — Add, edit, cancel, and complete appointments. Manage the patient and doctor lists.
-- **`/reports`** — Filter by doctor and date range to see appointment volume, completion and cancellation rates, the most active doctor, and the busiest day.
-
 ## What I learned
 
 - How small schema and indexing decisions show up immediately in query speed once you start asking real questions of the data.
